@@ -68,7 +68,7 @@ body, html {
 .nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-size: 2.5vh;
+    font-size: 1.5rem; /* Updated to rem */
     text-transform: uppercase;
 }
 
@@ -101,31 +101,50 @@ body, html {
 }
 
 .title-bold {
-    font-size: 9vh;
+    font-size: 5.5rem; /* Updated to rem */
     font-weight: 900;
     margin: 0;
 }
 
 .title-thin {
-    font-size: 3.5vh;
+    font-size: 2rem; /* Updated to rem */
     font-weight: 100;
     margin: 10px 0;
 }
 
 .title-underlined {
-    font-size: 6vh;
-    color: #3C9C43;
+    font-size: 2.5rem; /* Updated to rem */
+    color: #000000;
     text-align: left;
     margin-top: 150px;
     margin-left: 50px;
     padding-left: 20px;
 }
 
-.title-services, .title-about {
-    font-size: 6vh;
-    color: #3C9C43;
+.title-underlined span{
+    border-bottom: 0.3rem solid #3C9C43;
+}
+
+.title-services {
+    font-size: 2.5rem; /* Updated to rem */
+    color: #000000;
     text-align: left;
-    padding-left: 20px;
+    margin-left: 50px;
+}
+
+.title-services span{
+    border-bottom: 0.3rem solid #3C9C43;
+}
+
+.title-about{
+    font-size: 2.5rem; /* Updated to rem */
+    color: #000000;
+    text-align: left;
+    
+}
+
+.title-about span{
+    border-bottom: 0.3rem solid #3C9C43;
 }
 
 /* Info Section */
@@ -136,7 +155,7 @@ body, html {
 }
 
 .info-image {
-    width: 40%;
+    width: 30%;
     height: 100%;
     margin-left: 30px;
     margin-right: 50px;
@@ -146,8 +165,8 @@ body, html {
 .info-text {
     width: 50%;
     display: flex;
-    font-size: 25px;
-    font-weight: lighter;
+    font-size: 1.125rem; /* Updated to rem */
+    font-weight: normal;
     flex-direction: column;
     justify-content: center;
 }
@@ -191,7 +210,7 @@ body, html {
     margin: 0;
     margin-bottom: 20px;
     color: #3C9C43;
-    font-size: 20px;
+    font-size: 1.25rem; /* Updated to rem */
 }
 
 .footer p {
@@ -201,7 +220,7 @@ body, html {
 /* CTA Button */
 .cta-button {
     padding: 1.5vh 4vh;
-    font-size: 2.5vh;
+    font-size: 1.5rem; /* Updated to rem */
     background-color: #3C9C43;
     color: white;
     text-decoration: none;
@@ -217,8 +236,9 @@ body, html {
 
 /* Services Section */
 .services-container {
-    padding: 50px 20px;
+    padding:  20px;
     text-align: center;
+    
 }
 
 .services-grid {
@@ -251,11 +271,13 @@ body, html {
 .service-card h2 {
     color: #3C9C43;
     margin: 15px 0 10px;
+    font-size: 1.5rem; /* Updated to rem */
 }
 
 .service-card p {
     color: #555;
     line-height: 1.6;
+    font-size: 1.125rem; /* Updated to rem */
     padding: 0 20px 20px;
 }
 
@@ -301,7 +323,7 @@ body, html {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1.25rem; /* Updated to rem */
 }
 
 .contact-form button:hover {
@@ -318,7 +340,7 @@ body, html {
 
 .contact-info {
     flex: 1;
-    font-size: 16px;
+    font-size: 1rem; /* Updated to rem */
     margin-top: 50px;
     color: #333;
 }
@@ -349,7 +371,7 @@ body, html {
 
 .about-text {
     width: 100%;
-    font-size: 18px;
+    font-size: 1.125rem; /* Updated to rem */
     line-height: 1.6;
     color: #333;
     margin-right: 50px;
@@ -381,23 +403,23 @@ body, html {
     }
 
     .title-bold {
-        font-size: 6vh;
+        font-size: 2rem; /* Updated to rem */
     }
 
     .title-thin {
-        font-size: 3vh;
+        font-size: 1.5rem; /* Updated to rem */
     }
 
     .title-underlined {
-        font-size: 5vh;
+        font-size: 2rem; /* Updated to rem */
     }
 
     .title-services {
-        font-size: 5vh;
+        font-size: 2rem; /* Updated to rem */
     }
 
     .cta-button {
-        font-size: 2vh;
+        font-size: 1.25rem; /* Updated to rem */
     }
 
     .info-section {
@@ -449,7 +471,7 @@ body, html {
     }
 
     .about-text {
-        font-size: 16px;
+        font-size: 1rem; /* Updated to rem */
         margin-right: 20px;
     }
 
