@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* General styles */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,12 +19,11 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/bakcground-image.jpg'); 
+    background-image: url('images/bakcground-image.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    z-index: -2;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    z-index: -3; /* Lower this z-index to avoid conflicts */
 }
 
 .home-page::after {
@@ -34,8 +34,7 @@ body, html {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
-    z-index: -1;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    z-index: -2; /* Also lower this z-index */
 }
 
 /* Header styles */
@@ -46,11 +45,11 @@ body, html {
     padding: 2rem 5rem;
     background: rgb(0, 0, 0);
     position: relative;
-    z-index: 1;
+    z-index: 5; /* Set header higher */
 }
 
 .logo img {
-    height: 8rem;
+    height: 5rem;
 }
 
 .nav ul {
@@ -68,7 +67,8 @@ body, html {
 .nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.5rem; /* Updated to rem */
+    font-size: 1.5rem;
+    /* Updated to rem */
     text-transform: uppercase;
 }
 
@@ -82,9 +82,57 @@ body, html {
 }
 
 .icon {
-    height: 5rem;
+    height: 2rem;
     margin-left: 2rem;
     cursor: pointer;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    z-index: 101; /* Ensure hamburger is above all other elements */
+    position: relative; /* Position relative to the document */
+}
+
+.hamburger span {
+    width: 100%;
+    height: 0.25rem;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Mobile Menu Styles */
+.nav {
+    display: none;
+    position: fixed; /* Ensure the nav menu stays at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Full-screen menu */
+    background-color: rgba(0, 0, 0, 0.95); /* Black background for the menu */
+    text-align: center;
+    padding: 4rem 0;
+    z-index: 100; /* Set a high z-index to ensure the menu appears above other elements */
+}
+
+/* Ensure content is behind the overlay and navigation */
+.home-page::after {
+    z-index: -1;
+}
+
+.main-content {
+    z-index: 1;
+}
+
+/* Show the mobile menu when active */
+.nav.active {
+    display: flex;
+    flex-direction: column;
 }
 
 /* Main Content styles */
@@ -101,22 +149,25 @@ body, html {
 }
 
 .title-bold {
-    font-size: 5.5rem; /* Updated to rem */
+    font-size: 5.5rem;
+    /* Updated to rem */
     font-weight: 900;
     margin: 0;
 }
 
 .title-thin {
-    font-size: 2rem; /* Updated to rem */
+    font-size: 2rem;
+    /* Updated to rem */
     font-weight: 100;
     margin: 1rem 0;
 }
 
 .title-underlined {
-    font-size: 2.5rem; /* Updated to rem */
+    font-size: 2.5rem;
+    /* Updated to rem */
     color: #000000;
     text-align: left;
-    margin-top: 9rem;
+    margin-top: 5rem;
     margin-left: 3rem;
     padding-left: 1.25rem;
 }
@@ -126,7 +177,8 @@ body, html {
 }
 
 .title-services {
-    font-size: 2.5rem; /* Updated to rem */
+    font-size: 2.5rem;
+    /* Updated to rem */
     color: #000000;
     text-align: left;
     margin-left: 3rem;
@@ -137,7 +189,8 @@ body, html {
 }
 
 .title-about {
-    font-size: 2.5rem; /* Updated to rem */
+    font-size: 2.5rem;
+    /* Updated to rem */
     color: #000000;
     text-align: left;
 }
@@ -164,7 +217,8 @@ body, html {
 .info-text {
     width: 50%;
     display: flex;
-    font-size: 1.125rem; /* Updated to rem */
+    font-size: 1.125rem;
+    /* Updated to rem */
     font-weight: normal;
     flex-direction: column;
     justify-content: center;
@@ -190,6 +244,7 @@ body, html {
     padding-bottom: 1.875rem;
     text-align: center;
     color: #fff;
+    margin-top: 5rem;
 }
 
 .footer-logo img {
@@ -209,7 +264,8 @@ body, html {
     margin: 0;
     margin-bottom: 1.25rem;
     color: #3C9C43;
-    font-size: 1.25rem; /* Updated to rem */
+    font-size: 1.25rem;
+    /* Updated to rem */
 }
 
 .footer p {
@@ -219,7 +275,8 @@ body, html {
 /* CTA Button */
 .cta-button {
     padding: 1.5rem 4rem;
-    font-size: 1.5rem; /* Updated to rem */
+    font-size: 1.5rem;
+    /* Updated to rem */
     background-color: #3C9C43;
     color: white;
     text-decoration: none;
@@ -269,13 +326,15 @@ body, html {
 .service-card h2 {
     color: #3C9C43;
     margin: 0.9375rem 0 0.625rem;
-    font-size: 1.5rem; /* Updated to rem */
+    font-size: 1.5rem;
+    /* Updated to rem */
 }
 
 .service-card p {
     color: #555;
     line-height: 1.6;
-    font-size: 1.125rem; /* Updated to rem */
+    font-size: 1.125rem;
+    /* Updated to rem */
     padding: 0 1.25rem 1.25rem;
 }
 
@@ -321,7 +380,8 @@ body, html {
     border: none;
     border-radius: 0.25rem;
     cursor: pointer;
-    font-size: 1.25rem; /* Updated to rem */
+    font-size: 1.25rem;
+    /* Updated to rem */
 }
 
 .contact-form button:hover {
@@ -338,7 +398,8 @@ body, html {
 
 .contact-info {
     flex: 1;
-    font-size: 1rem; /* Updated to rem */
+    font-size: 1rem;
+    /* Updated to rem */
     margin-top: 3.125rem;
     color: #333;
 }
@@ -369,7 +430,8 @@ body, html {
 
 .about-text {
     width: 100%;
-    font-size: 1.125rem; /* Updated to rem */
+    font-size: 1.125rem;
+    /* Updated to rem */
     line-height: 1.6;
     color: #333;
     margin-right: 3.125rem;
@@ -384,16 +446,57 @@ body, html {
     margin-bottom: 1.25rem;
 }
 
-/* Responsive styles */
-
 /* Mobile and Small Screen Adjustments */
 @media only screen and (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .hamburger {
+        display: flex;
+        /* Show the hamburger icon */
+    }
+
     .nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav ul li {
+        margin: 1.5rem 0;
+    }
+
+    /* Hide the menu initially */
+    .nav {
+        display: none;
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    /* Show the menu when the active class is toggled */
+    .nav.active {
+        display: flex;
         flex-direction: column;
     }
 
-    .header {
-        flex-direction: column;
+    .logo img {
+        height: 3rem;
+    }
+
+    .hamburger {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
     }
 
     .header-icons {
@@ -401,23 +504,28 @@ body, html {
     }
 
     .title-bold {
-        font-size: 2rem; /* Updated to rem */
+        font-size: 2.5rem;
+        /* Updated to rem */
     }
 
     .title-thin {
-        font-size: 1.5rem; /* Updated to rem */
+        font-size: 1rem;
+        /* Updated to rem */
     }
 
     .title-underlined {
-        font-size: 2rem; /* Updated to rem */
+        font-size: 2rem;
+        /* Updated to rem */
     }
 
     .title-services {
-        font-size: 2rem; /* Updated to rem */
+        font-size: 2rem;
+        /* Updated to rem */
     }
 
     .cta-button {
-        font-size: 1.25rem; /* Updated to rem */
+        font-size: 1.25rem;
+        /* Updated to rem */
     }
 
     .info-section {
@@ -469,7 +577,8 @@ body, html {
     }
 
     .about-text {
-        font-size: 1rem; /* Updated to rem */
+        font-size: 1rem;
+        /* Updated to rem */
         margin-right: 1.25rem;
     }
 

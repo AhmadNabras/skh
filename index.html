@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,14 @@
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="home-page">
     <!-- Header Section -->
     <header class="header">
         <div class="logo">
-            <img src="images/logo.png" alt="Logo" onclick="scrollToTop()">
+            <img src="images/logo.png" alt="Logo">
         </div>
-        <nav class="nav">
+        <nav class="nav" id="mobile-menu">
             <ul>
                 <li><a href="index.html"><strong>Home</strong></a></li>
                 <li><a href="services.html">Services</a></li>
@@ -21,13 +23,11 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <div class="header-icons">
-            <a href="https://www.instagram.com/skh.transport/" target="_blank">
-                <img src="images/instagram (1).png" alt="Instagram" class="icon">
-            </a>
-            <a href="tel:+32490190126">
-                <img src="images/phone-call.png" alt="Call us" class="icon">
-            </a>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </header>
 
@@ -45,9 +45,20 @@
     <div class="info-section">
         <img src="images/skh-delivery.png" alt="SKH Delivery" class="info-image">
         <div class="info-text">
-            <p>At SKH Transport, we provide comprehensive transport and logistics solutions tailored to the diverse needs of our clients. With over 11 years of industry experience, we have established ourselves as a trusted leader in Belgium, offering reliable and efficient services. Whether it’s local transport within Brussels or nationwide coverage, we customize our offerings to suit your specific requirements, ensuring timely and cost-effective solutions.
-                <br><br>What sets us apart is our commitment to excellence and customer satisfaction. Our team works closely with each client to deliver personalized services, whether you need quick deliveries or large-scale logistical support. With a modern fleet and a focus on professionalism, SKH Transport is equipped to handle projects of any size, ensuring that your goods reach their destination safely and on time.
-                <br><br>By combining industry expertise, innovative technology, and a customer-centric approach, SKH Transport strives to be more than just a service provider. We are your trusted partner, dedicated to moving your business forward with efficiency and care.</p>
+            <p>At SKH Transport, we provide comprehensive transport and logistics solutions tailored to the diverse
+                needs of our clients. With over 11 years of industry experience, we have established ourselves as a
+                trusted leader in Belgium, offering reliable and efficient services. Whether it’s local transport within
+                Brussels or nationwide coverage, we customize our offerings to suit your specific requirements, ensuring
+                timely and cost-effective solutions.
+                <br><br>What sets us apart is our commitment to excellence and customer satisfaction. Our team works
+                closely with each client to deliver personalized services, whether you need quick deliveries or
+                large-scale logistical support. With a modern fleet and a focus on professionalism, SKH Transport is
+                equipped to handle projects of any size, ensuring that your goods reach their destination safely and on
+                time.
+                <br><br>By combining industry expertise, innovative technology, and a customer-centric approach, SKH
+                Transport strives to be more than just a service provider. We are your trusted partner, dedicated to
+                moving your business forward with efficiency and care.
+            </p>
             <h3>Why choose SKH Transport?</h3>
             <strong>Reliability:</strong> A trustworthy service backed by years of experience.
             <strong>Efficiency:</strong> Timely deliveries with cost-effective solutions.
@@ -89,6 +100,19 @@
     <!-- Include your JavaScript file -->
     <script src="script.js"></script>
     <script>
+        window.onload = function() {
+            // Select elements
+            const hamburger = document.getElementById('hamburger-icon');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Toggle navigation menu
+            if (hamburger && mobileMenu) {
+                hamburger.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                });
+            }
+        };
+
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
@@ -96,5 +120,7 @@
             });
         }
     </script>
+
 </body>
+
 </html>
