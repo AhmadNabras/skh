@@ -100,18 +100,21 @@
     <!-- Include your JavaScript file -->
     <script src="script.js"></script>
     <script>
+        
         window.onload = function() {
-            // Select elements
-            const hamburger = document.getElementById('hamburger-icon');
-            const mobileMenu = document.getElementById('mobile-menu');
+        // Select elements
+        const hamburger = document.getElementById('hamburger-icon');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-            // Toggle navigation menu
-            if (hamburger && mobileMenu) {
-                hamburger.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('active');
-                });
-            }
-        };
+        // Toggle navigation menu and change icon
+     if (hamburger && mobileMenu) {
+            hamburger.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active'); // Show/Hide the menu
+                hamburger.classList.toggle('open');    // Change hamburger to X
+             });
+        }
+};
+
 
         function scrollToTop() {
             window.scrollTo({

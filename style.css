@@ -89,14 +89,15 @@ html {
 
 /* Hamburger Menu Styles */
 .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 2rem;
     height: 2rem;
     cursor: pointer;
-    z-index: 101; /* Ensure hamburger is above all other elements */
-    position: relative; /* Position relative to the document */
+    z-index: 1001;
+    position: relative;
+    transition: transform 0.3s ease; /* Smooth transition */
 }
 
 .hamburger span {
@@ -104,8 +105,26 @@ html {
     height: 0.25rem;
     background-color: white;
     border-radius: 10px;
+    transition: all 0.3s ease; /* Smooth transition for all states */
 }
 
+/* Change to "X" when menu is open */
+.hamburger.open span:nth-child(1) {
+    transform: rotate(50deg) translate(10px, 10px); /* Rotate and move */
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* Rotate and move */
+}
+
+/* Back to original state when not open */
+.hamburger span {
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
+}
 /* Mobile Menu Styles */
 .nav {
     display: none;
