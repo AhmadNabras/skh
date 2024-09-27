@@ -89,7 +89,7 @@ html {
 
 /* Hamburger Menu Styles */
 .hamburger {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-around;
     width: 2rem;
@@ -110,7 +110,7 @@ html {
 
 /* Change to "X" when menu is open */
 .hamburger.open span:nth-child(1) {
-    transform: rotate(50deg) translate(10px, 10px); /* Rotate and move */
+    transform: rotate(50deg) translate(11px, 11px); /* Rotate and move */
 }
 
 .hamburger.open span:nth-child(2) {
@@ -118,13 +118,14 @@ html {
 }
 
 .hamburger.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px); /* Rotate and move */
+    transform: rotate(-45deg) translate(4px, -5px); /* Rotate and move */
 }
 
 /* Back to original state when not open */
 .hamburger span {
     transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
 }
+
 /* Mobile Menu Styles */
 .nav {
     display: none;
@@ -186,9 +187,7 @@ html {
     /* Updated to rem */
     color: #000000;
     text-align: left;
-    margin-top: 5rem;
-    margin-left: 3rem;
-    padding-left: 1.25rem;
+    margin-left: 2rem;
 }
 
 .title-underlined span {
@@ -200,8 +199,10 @@ html {
     /* Updated to rem */
     color: #000000;
     text-align: left;
-    margin-left: 3rem;
+    margin-left: 1rem;
 }
+
+
 
 .title-services span {
     border-bottom: 0.3rem solid #3C9C43;
@@ -222,31 +223,35 @@ html {
 .info-section {
     display: flex;
     align-items: stretch;
-    margin: 1.25rem 3.125rem;
+    margin: 1.25rem 1rem; /* Updated margin to bring content to the left */
 }
 
 .info-image {
     width: 30%;
     height: 100%;
-    margin-left: 1.875rem;
-    margin-right: 3.125rem;
+    margin-left: 1rem; /* Updated margin */
+    margin-right: 1rem; /* Updated margin */
     margin-top: 1.5625rem;
 }
 
 .info-text {
-    width: 50%;
+    width: 60%; /* Increased width */
     display: flex;
     font-size: 1.125rem;
     /* Updated to rem */
     font-weight: normal;
     flex-direction: column;
     justify-content: center;
+    text-align: justify;
+    padding-left: 0; /* Ensure the text starts from the left */
 }
 
+/* Updated to remove extra padding for the titles */
 .info-text h3 {
     color: #3C9C43;
     margin-bottom: 0;
     margin-top: 0;
+    padding-left: 0; /* Removed extra left padding */
 }
 
 .info-text strong {
@@ -254,20 +259,20 @@ html {
     margin-bottom: 0.625rem;
     margin-top: 0.625rem;
     font-weight: normal;
+    padding-left: 0; /* Bring titles closer to the left */
 }
 
 /* Footer styles */
 .footer {
     background-color: #333;
-    padding: 1.25rem;
     padding-bottom: 1.875rem;
     text-align: center;
     color: #fff;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
 .footer-logo img {
-    height: 7.5rem;
+    height: 5rem;
     margin-bottom: 3.125rem;
     margin-top: 3.125rem;
 }
@@ -293,13 +298,13 @@ html {
 
 /* CTA Button */
 .cta-button {
-    padding: 1.5rem 4rem;
+    padding: 1rem 2rem;
     font-size: 1.5rem;
     /* Updated to rem */
     background-color: #3C9C43;
     color: white;
     text-decoration: none;
-    border-radius: 0.3125rem;
+    border-radius: 1.5rem;
     margin-top: 1.25rem;
     transition: background-color 0.3s ease;
 }
@@ -313,6 +318,7 @@ html {
 .services-container {
     padding: 1.25rem;
     text-align: center;
+
 }
 
 .services-grid {
@@ -320,8 +326,8 @@ html {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.25rem;
     margin-top: 1.875rem;
-    margin-left: 3.125rem;
-    margin-right: 3.125rem;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .service-card {
@@ -355,6 +361,7 @@ html {
     font-size: 1.125rem;
     /* Updated to rem */
     padding: 0 1.25rem 1.25rem;
+    text-align: justify;
 }
 
 /* Contact Page */
@@ -453,7 +460,7 @@ html {
     /* Updated to rem */
     line-height: 1.6;
     color: #333;
-    margin-right: 3.125rem;
+    margin-right: 2rem;
     margin-bottom: 3.125rem;
 }
 
@@ -467,6 +474,13 @@ html {
 
 /* Mobile and Small Screen Adjustments */
 @media only screen and (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    
     .header {
         flex-direction: row;
         justify-content: space-between;
@@ -484,6 +498,7 @@ html {
         width: 100%;
         padding: 0;
         margin: 0;
+        margin-left: auto;
     }
 
     .nav ul li {
@@ -534,6 +549,8 @@ html {
 
     .title-underlined {
         font-size: 2rem;
+        margin-top: 7rem;
+
         /* Updated to rem */
     }
 
@@ -547,13 +564,23 @@ html {
         /* Updated to rem */
     }
 
+    /* Align the image and text to the left and make the image larger */
     .info-section {
         flex-direction: column;
+        text-align: left; /* Align text to the left */
+        padding: 1rem; /* Add padding for better mobile spacing */
     }
 
-    .info-image,
+    .info-image {
+        width: 100%; /* Make the image larger, full width */
+        max-width: 500px; /* Set a maximum width to keep image size in check */
+        margin: 1rem 0; /* Add margin for space around the image */
+        display: block;
+    }
+
     .info-text {
         width: 100%;
+        font-size: 1.125rem; /* Ensure readable font size on mobile */
     }
 
     .footer-grid {
@@ -583,25 +610,46 @@ html {
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
+        margin-left: 1.25rem;
+        margin-right: 1.25rem;
     }
+    
 
     .info-section {
         flex-direction: row;
         margin: 1.25rem;
     }
 
-    .about-content {
-        flex-direction: row;
-        gap: 1.25rem;
-    }
-
     .about-text {
         font-size: 1rem;
-        /* Updated to rem */
         margin-right: 1.25rem;
     }
 
     .about-image img {
         max-width: 50%;
+    }
+}
+
+/* Large Screen Adjustments (Above 1024px) */
+@media (min-width: 1025px) {
+    .hamburger {
+        display: none;
+    }
+
+    .nav {
+        display: block;
+        position: relative;
+        height: auto;
+        background-color: transparent;
+    }
+
+    .nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav ul li {
+        margin: 0 2rem;
     }
 }

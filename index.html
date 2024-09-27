@@ -13,7 +13,9 @@
     <!-- Header Section -->
     <header class="header">
         <div class="logo">
-            <img src="images/logo.png" alt="Logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo">
+            </a>
         </div>
         <nav class="nav" id="mobile-menu">
             <ul>
@@ -100,21 +102,17 @@
     <!-- Include your JavaScript file -->
     <script src="script.js"></script>
     <script>
-        
-        window.onload = function() {
-        // Select elements
-        const hamburger = document.getElementById('hamburger-icon');
-        const mobileMenu = document.getElementById('mobile-menu');
+        window.onload = function () {
+            const hamburger = document.getElementById('hamburger-icon');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-        // Toggle navigation menu and change icon
-     if (hamburger && mobileMenu) {
-            hamburger.addEventListener('click', function() {
-                mobileMenu.classList.toggle('active'); // Show/Hide the menu
-                hamburger.classList.toggle('open');    // Change hamburger to X
-             });
-        }
-};
-
+            if (hamburger && mobileMenu) {
+                hamburger.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('active');
+                    hamburger.classList.toggle('open');
+                });
+            }
+        };
 
         function scrollToTop() {
             window.scrollTo({
@@ -123,7 +121,6 @@
             });
         }
     </script>
-
 </body>
 
 </html>
