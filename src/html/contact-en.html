@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/contact.css">
+    <title>skh transport</title>
+</head>
+<body>
+
+    <!-- Hero Section met Achtergrondafbeelding en Navigatie -->
+    <section class="hero">
+        <div class="nav-container">
+            <!-- Company Logo -->
+            <img src="../images/logo.png" alt="Taxi Service Logo" class="logo">
+            <!-- Hamburger Icon (visible only on mobile) -->
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+            
+            <!-- Desktop Navigation Menu (visible on desktop) -->
+            <ul class="desktop-nav">
+                <li><a href="index-en.html">Home</a></li>
+                <li><a href="about-en.html">About Us</a></li>
+                <li><a href="services-en.html">Services</a></li>
+                <li><a href="contact-en.html">Contact</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Mobile Hamburger Menu -->
+    <nav class="mobile-nav">
+        <!-- Close Icon -->
+        <div class="hamburger close-icon" onclick="toggleMenu()">&#10005;</div>
+        <ul>
+            <li><a href="index-en.html">Home</a></li>
+            <li><a href="about-en.html">About Us</a></li>
+            <li><a href="services-en.html">Services</a></li>
+            <li><a href="contact-en.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    
+    <div class="contact-page-container">
+        <h2><strong>Contact</strong> Us</h2>
+        
+        <div class="form-container">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <input type="hidden" name="access_key" value="80ecc759-a98f-4bf0-a8f4-aa69bbadd54c">
+                <input type="hidden" name="subject" value="New Submission from Web3Forms">
+                <input type="checkbox" name="botcheck" id="" style="display: none;">
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="first_name">First Name</label>
+                        <input type="text" name="name" id="first_name" placeholder="John" required>
+                    </div>
+                    <div class="form-group half-width">
+                        <label for="lname">Last Name</label>
+                        <input type="text" name="last_name" id="lname" placeholder="Doe" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" placeholder="you@company.com" required>
+                    </div>
+                    <div class="form-group half-width">
+                        <label for="phone">Phone Number</label>
+                        <input type="text" name="phone" id="phone" placeholder="+32 456 789 789" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea rows="5" name="message" id="message" placeholder="Your Message" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="submit-button">
+                        Send Message
+                    </button>
+                </div>
+                <p class="form-result text-center" id="result"></p>
+            </form>
+            <div class="contact-info">
+                <h2 style="color: #3C9C43; font-weight: bold;">SKH TRANSPORT</h2>
+                <p>Bergensesteenweg 421/13</p>
+                <p>SintPieters-Leeuw 1600</p>
+                <p>+32 470 184 615</p>
+            </div>
+        </div>
+        
+    </div>
+    <!-- Footer -->
+    <footer>
+        <!-- Top Contact Info -->
+        <div class="footer-contact-top">
+            <div class="contact-item">
+                <img src="../images/phone.png" alt="Phone">
+                <p>+32 487 99 18 77</p>
+            </div>
+            <div class="contact-item">
+                <img src="../images/mail.png" alt="Email">
+                <p>info@skhtransport.be</p>
+            </div>
+            <div class="contact-item">
+                <img src="../images/instagram.png" alt="Location">
+                <p>@skh-transport</p>
+            </div>
+        </div>
+    
+        <!-- Divider -->
+        <hr class="footer-divider" />
+    
+        <!-- Bottom Section with Navigation -->
+        <div class="footer-bottom">
+            <nav class="footer-links">
+                <a href="index-en.html" class="footer-link">Home</a>
+                <a href="about-en.html" class="footer-link">About Us</a>
+                <a href="services-en.html" class="footer-link">Services</a>
+                <a href="contact-en.html" class="footer-link">Contact Us</a>
+            </nav>
+        </div>
+    
+        <!-- Social Media Links -->
+        <div class="footer-social">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    
+        <!-- Copyright Text -->
+        <p class="footer-copyright">
+            &copy; 2024 SKH Transport. All rights reserved.
+        </p>
+    </footer>
+</body>
+
+
+<script>
+    function toggleMenu() {
+        const nav = document.querySelector('.mobile-nav');
+        const hamburger = document.querySelector('.hamburger');
+
+        nav.classList.toggle('open');
+        hamburger.classList.toggle('open');
+
+        if (hamburger.classList.contains('open')) {
+            hamburger.innerHTML = '&#10005;'; // X icon
+        } else {
+            hamburger.innerHTML = '&#9776;'; // Hamburger icon
+        }
+    }
+
+    function changeLanguage(pageUrl) {
+        window.location.href = pageUrl;
+    }
+</script>
+</html>
